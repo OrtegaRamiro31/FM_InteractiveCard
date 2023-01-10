@@ -338,18 +338,24 @@ template {
 }
 
 .main-container {
-  width: 37.5rem;
+  width: 100%;
   margin: auto;
 }
+@media (min-width: 768px) {
+  .main-container {
+    width: 37.5rem;
+  }
+}
 .main-container__background-section {
-  background-image: url(../../../images/bg-main-mobile.png);
+  background-image: url(../../images/bg-main-mobile.png);
   background-repeat: no-repeat;
   height: 24rem;
   position: relative;
+  background-size: cover;
 }
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   .main-container__background-section {
-    background-image: url(../../../images/bg-main-desktop.png);
+    background-image: url(../../images/bg-main-desktop.png);
     width: 45rem;
     height: 100vh;
     background-size: cover;
@@ -358,13 +364,13 @@ template {
 .main-container__form-section {
   padding: 9rem 2.4rem 4.5rem;
 }
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   .main-container__form-section {
     margin: auto;
     max-width: 45%;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   .main-container {
     width: 100%;
     height: 100vh;
@@ -394,7 +400,7 @@ template {
 }
 
 .card-front {
-  background-image: url("../../../images/bg-card-front.png");
+  background-image: url("../../images/bg-card-front.png");
   position: absolute;
   top: 12.6rem;
   left: 1.8rem;
@@ -404,6 +410,11 @@ template {
   justify-content: space-around;
   align-items: flex-start;
   padding: 0 2rem;
+}
+@media (min-width: 768px) {
+  .card-front {
+    top: 40rem;
+  }
 }
 @media (min-width: 1440px) {
   .card-front {
@@ -439,13 +450,18 @@ template {
 }
 
 .card-back {
-  background-image: url("../../../images/bg-card-back.png");
+  background-image: url("../../images/bg-card-back.png");
   position: absolute;
   top: 2.5rem;
   right: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+@media (min-width: 768px) {
+  .card-back {
+    top: 27rem;
+  }
 }
 @media (min-width: 1440px) {
   .card-back {
