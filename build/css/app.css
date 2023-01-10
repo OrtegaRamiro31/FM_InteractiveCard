@@ -474,22 +474,23 @@ template {
   margin: 0 2rem 0.5rem 0;
 }
 
+label {
+  color: hsl(278deg, 68%, 11%);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.form__input {
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  border: 1px solid hsl(270deg, 3%, 87%);
+}
+
 @media (min-width: 1440px) {
   .form {
     width: 65%;
     margin: auto;
   }
-}
-.form label {
-  color: hsl(278deg, 68%, 11%);
-  text-transform: uppercase;
-  font-size: 1.5rem;
-}
-.form input[type=text] {
-  margin: 1rem 0;
-  padding: 1rem 1rem;
-  border-radius: 10px;
-  border: 1px solid hsl(270deg, 3%, 87%);
 }
 .form .large {
   width: 100%;
@@ -576,4 +577,31 @@ template {
 
 .thanks-section__text {
   color: hsl(279deg, 6%, 55%);
+}
+
+.error {
+  width: 100%;
+  height: 2rem;
+  padding: 0.2rem;
+  color: hsl(0deg, 100%, 66%);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.error-input {
+  border: 1px solid hsl(0deg, 100%, 66%);
+}
+
+.form__errors-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.from__input-mmyy--error {
+  grid-column: 1/3;
+}
+
+.from__input-cvc--error {
+  grid-column: 3/5;
 }
