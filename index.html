@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    
+    <link rel="stylesheet" href="build/css/app.css">
     <title>Frontend Mentor | Interactive card details form</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -20,10 +20,13 @@
       <section class="main-container__background-section ">
         <div class="card-front">
           <img class="card__logo" src="/images/card-logo.svg" alt="Logo"/>
-          <p class="card__number">0000 0000 0000 0000</p>
-          <div class="card__details">
-            <p class="card__details-name">Jane Appleseed</p>
-            <p><span class="card__month">00</span>/<span class="card__year">00</span></p>
+
+          <div class="card-front__data">
+            <p class="card__number">0000 0000 0000 0000</p>
+            <div class="card__details">
+              <p class="card__details-name">Jane Appleseed</p>
+              <p><span class="card__month">00</span>/<span class="card__year">00</span></p>
+            </div>
           </div>
         </div>
 
@@ -36,7 +39,7 @@
         <form class="form">
           <label for="cardholder">Cardholder Name</label>
           <input 
-            class="form__input"
+            class="form__input large"
             type="text"
             name="cardholder"
             id="cardholder"
@@ -46,7 +49,7 @@
 
           <label for="cardNumber">Card Number</label>
           <input
-            class="form__input" 
+            class="form__input large" 
             type="text"
             name="cardNumber"
             id="cardNumber"
@@ -56,12 +59,14 @@
           <div class="form__inputnumber--error error"></div>
 
             <div class="form__date-cvc">
-              <!-- 1 -->
-              <label for="cardMonth">Exp. Date (MM/YY)</label>
-              <!-- 2 -->
-              <label for="cardCvc">CVC</label>
+              <div class="form__date-cvc--input">
+                <!-- 1 -->
+                <label class="form__date-cvc--expDate" for="cardMonth">Exp. Date (MM/YY)</label>
+                <!-- 2 -->
+                <label for="cardCvc">CVC</label>
+              </div>
               <!-- 3 -->
-              <div>
+              <div class="form__date-cvc--grid">
                 <input
                   class="form__input"
                   type="text"
@@ -78,16 +83,16 @@
                   id="cardYear"
                   placeholder="YY"
                 />
+                <!-- 4 -->
+                <input 
+                  class="form__input"
+                  type="text"
+                  maxlength="3"
+                  name="cardCvc"
+                  id="cardCvc"
+                  placeholder="e.g. 123"
+                >
               </div>
-              <!-- 4 -->
-              <input 
-                class="form__input"
-                type="text"
-                maxlength="3"
-                name="cardCvc"
-                id="cardCvc"
-                placeholder="e.g. 123"
-              >
               <!-- 5 -->
               <div class="form__errors-container">
                 <div class="from__input-mm--error error"></div>
@@ -99,23 +104,20 @@
             <input class="form__submit" type="submit" value="Confirm">
         </form>
       </section>
+      <!-- Completed state start -->
+      <section class="thanks-section">
+        <div class="thanks-section__div--img">
+          <img class="thanks-section__img" src="./images/icon-complete.svg" alt="Complete icon">
+        </div>
+        <div class="thanks-section__finished">
+          <h1 class="thanks-section__title">Thank you!</h1>
+          <p class="thanks-section__text">We've added your card details</p>
+          <button class="thanks-section__button">Continue</button>
+        </div>
+      </section>
     </main>
-  
 
-    
 
-    <!-- Completed state start -->
-    <section class="thanks-section">
-      <img class="thanks-section__img" src="./images/icon-complete.svg" alt="Complete icon">
-      <h1 class="thanks-section__title">Thank you!</h1>
-      <p class="thanks-section__text">We've added your card details</p>
-      <button class="thanks-section__button">Continue</button>
-    </section>
-
-    
-    
-    
-    
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a href="#" target="_blank">Ramiro Ortega</a>.

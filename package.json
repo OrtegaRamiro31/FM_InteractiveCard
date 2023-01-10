@@ -1,0 +1,31 @@
+{
+  "name": "02interactive-card-details-form-main",
+  "version": "1.0.0",
+  "description": "Project Gulp, SASS, HTML, JS",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrtegaRamiro31/InteractiveCard.git"
+  },
+  "keywords": [
+    "SASS",
+    "HTML",
+    "Gulp",
+    "JS"
+  ],
+  "author": "Ramiro Ortega",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OrtegaRamiro31/InteractiveCard/issues"
+  },
+  "homepage": "https://github.com/OrtegaRamiro31/InteractiveCard#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.57.1"
+  }
+}
