@@ -68,8 +68,9 @@ function monthAndYearVerify(inputMonth, inputYear, showErrorDates){
         inputYear.classList.add('error-input');
 
     }
-    else if(inputMonth.value > 12 || !verifyOnlyNumbers(inputMonth.value) || inputMonth.value.length < 2 || !verifyOnlyNumbers(inputYear.value) || inputYear.value.length < 2 || inputYear.value < currentYear) {
+    else if(inputMonth.value > 12 || !verifyOnlyNumbers(inputMonth.value) || inputMonth.value.length < 2 || !verifyOnlyNumbers(inputYear.value) || inputYear.value.length < 2 || parseInt(inputYear.value) < currentYear) {
         inputMonth.classList.add('error-input');
+        inputYear.classList.add('error-input');
         showErrorDates.textContent = "Invalid Month Or Year";
     }
     else {
@@ -82,7 +83,7 @@ function monthAndYearVerify(inputMonth, inputYear, showErrorDates){
 }
 
 function cvcVerify(inputCVC, showErrorCardCVC){
-    if(inputCVC.value === 0) {
+    if(inputCVC.value.length === 0) {
         showErrorCardCVC.textContent = 'Can\'t be blank';
         inputCVC.classList.add('error-input');
     } 

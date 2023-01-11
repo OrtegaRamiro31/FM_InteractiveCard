@@ -97,17 +97,27 @@ function inputSubmit() {
 }
 
 function verifyInputs(){
-    if(    
-        verifyCardName(inputCardName, showErrorCardHolder),
-        verifyCardNumber(inputCardNum, showErrorCardNum),
-        monthAndYearVerify(inputMonth, inputYear, showErrorDates),
-        cvcVerify(inputCVC, showErrorCardCVC)
-        ) {
-            console.log(thanks_section);
-            thanks_section.style.display="flex";
-            mainContainer.style.display="none";
-            inputContinue.addEventListener('click', () => {
-                location.reload();
-            });
-        } 
+    
+    // Creation of array that take all results (true and false) 
+    let resultsOfVerification = [];
+    resultsOfVerification.push(verifyCardName(inputCardName, showErrorCardHolder),
+    verifyCardNumber(inputCardNum, showErrorCardNum),
+    monthAndYearVerify(inputMonth, inputYear, showErrorDates),
+    cvcVerify(inputCVC, showErrorCardCVC));
+    
+    // Pass results of array to a Set. The Set object dont repeat results.
+    const verifyResults = new Set(resultsOfVerification);
+
+    // Copy of object set.
+    let result = [...verifyResults];
+
+    // If object set just contain a one element (true value), success.
+    if(result.length === 1 && result[0] === true){
+        thanks_section.style.display="flex";
+        mainContainer.style.display="none";
+        inputContinue.addEventListener('click', () => {
+            location.reload();
+        });
+    }
+
 }
