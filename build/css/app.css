@@ -485,6 +485,9 @@ label {
   border-radius: 10px;
   border: 1px solid hsl(270deg, 3%, 87%);
 }
+.form__input:hover {
+  border-color: hsl(278deg, 94%, 30%);
+}
 
 @media (min-width: 1440px) {
   .form {
